@@ -17,12 +17,38 @@
 
 # Tuto část dopiš
 
-#def pridej(zvire, pocet):
+def pridej(zvire, pocet):
+     global tygri
+     global lvy
+     global opice
+     if zvire == "tygri":
+        tygri = tygri + pocet
+     elif zvire == "lvy":
+         lvy = lvy + pocet
+     elif zvire == "opice":
+         opice = opice + pocet
+     else:
+         print("zadal jsi něco špatně")
     
-#def odeber(zvire, pocet):
+   
     
-#def vypis():
+def odeber(zvire, pocet):
+    global tygri
+    global lvy
+    global opice
+    if zvire == "tygri":
+        tygri = tygri - pocet
+    elif zvire == "lvy":
+        lvy = lvy - pocet
+    elif zvire == "opice":
+        opice = opice - pocet
+    else:
+        print("Zadal jsi něco špatně")
+
+
     
+def vypis():
+    print(f"Tygrů je {tygri}, lvů je {lvy} a opic je {opice}.")
 
 
 
@@ -55,11 +81,11 @@ while(opakovat=="ano"):
         pocet = int(input("Zadejte počet těchto zvířat"))
         pridej(zvire,pocet)
     elif cislo==2:
-        zvire = input("Zadejte zvířata která chcete přidat(tygri,lvy,opice)")
+        zvire = input("Zadejte zvířata která chcete odebrat: tygri,lvy,opice")
         pocet = int(input("Zadejte počet těchto zvířat"))
-        odeber(zvire,pocet)
+        odeber(zvire, pocet)
     elif cislo==3:
         vypis()
-
+    
     # update proměnné opakovat, aby nedošlo k zacyklení programu
     opakovat = input("Chcete opakovat program?(ano/ne)")
